@@ -13,6 +13,7 @@ WORKDIR /opt/test
 COPY karma.conf.js .
 
 RUN adduser -U testuser && \
+    mkdir ./screenshots && \
     chown -R testuser:testuser .
 
 USER testuser
@@ -20,4 +21,4 @@ USER testuser
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/google-chrome
 
-RUN npm install --save-dev puppeteer karma karma-chrome-launcher karma-mocha karma-chai mocha chai minimist
+RUN npm install --save-dev puppeteer jest jest-puppeteer karma karma-chrome-launcher karma-mocha karma-chai mocha chai minimist
