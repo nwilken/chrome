@@ -10,7 +10,7 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_14.x | bash - && \
     rm -rf /var/cache/yum
 
 WORKDIR /opt/test
-COPY karma.conf.js .
+COPY jest.config.js package.json ./
 
 RUN adduser -U testuser && \
     mkdir ./screenshots && \
@@ -21,4 +21,4 @@ USER testuser
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/google-chrome
 
-RUN npm install --save-dev puppeteer jest jest-puppeteer karma karma-chrome-launcher karma-mocha karma-chai mocha chai minimist
+RUN npm install --save-dev puppeteer jest minimist
