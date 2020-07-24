@@ -21,4 +21,4 @@ USER testuser
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/google-chrome
 
-RUN npm install --save-dev puppeteer jest jest-html-reporter minimist
+RUN npm install --save-dev puppeteer jest jest-html-reporter axios minimist
